@@ -1,0 +1,230 @@
+* {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  line-height: 1.8;
+}
+
+/* No borders */
+body, html, a {
+  height: 100%;
+  background-color: #DCDCDC;
+  color: #777;
+  overflow-x:hidden;
+  margin: 0;
+}
+  
+/* Make image fit the screen */
+.background-img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.75;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.welcome-img {
+  background-image: url('./pictures/cover.jpeg');
+  min-height: 100%;
+}
+
+.portfolio-img {
+  background-image: url('./pictures/portfolio.png');
+  padding-top: 300px;
+}
+
+.hobby-img {
+  width: auto;
+  height: 200px;
+  margin: 30px;
+}
+
+.about-me-img {
+  content: url("./pictures/profile.JPG");
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.popup {
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: auto;
+  background-color: rgb(0, 0, 0, 0.9);
+  padding-top: 50px;
+}
+
+.popup-img {
+  width: 500px;
+  height: auto;
+}
+
+.popup-txt {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  height: auto;
+}
+
+.line { 
+  display:block;
+  border:none;
+  color:white;
+  height:1px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 700, from(#000), to(rgb(220, 220, 220)));
+}
+
+.hobby-1 {
+  content: url("./pictures/snowball.jpeg");
+}
+
+.hobby-2 {
+  content: url("./pictures/piano.jpg");
+}
+
+.hobby-3 {
+  content: url("./pictures/hiking.jpeg");
+}
+
+.hobby-4 {
+  content: url("./pictures/alchemy.png");
+}
+
+.game-1 {
+  content: url("./pictures/tutorial1.png")
+}
+
+.game-2 {
+  content: url("./pictures/tutorial2.png")
+}
+
+.game-3 {
+  content: url("./pictures/Zelda.png")
+}
+
+.game-4 {
+  content: url("./pictures/UnityChan.png")
+}
+
+.game-5 {
+  content: url("./pictures/GrapeKun.png")
+}
+
+.about-me-text {
+  width: 400px;
+  margin-left: 50px;
+}
+
+.arrow-viewbox {
+  height: 0px; 
+  width: 30px;
+}
+  
+.center-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.center-from-center {
+  transform: translate(-50%,-50%);
+}
+  
+.large-font {
+  font-size: 24px;
+  letter-spacing: 10px;
+}
+  
+.white-color {
+  color: #fff;
+}
+
+.arrows path {
+  fill: transparent;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.hover-opacity:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+  
+.animate-left-right {
+  overflow: hidden;
+  animation: keyframes-left-right 2s;
+}
+  
+@keyframes keyframes-left-right {
+  from { 
+    width: 0; 
+  }
+  to { 
+    width: 100%; 
+  }
+}
+
+.animate-clear-opacity {
+  animation: keyframes-clear-opacity 2s forwards;
+}
+  
+@keyframes keyframes-clear-opacity {
+  from { 
+    opacity: 1; 
+  }
+  to { 
+    opacity: 0;
+  }
+}
+
+.animate-down-arrow {
+  opacity: 0;
+  animation: keyframes-down-arrow 2s infinite;
+}
+  
+@keyframes keyframes-down-arrow {
+  0% {
+    opacity:0;
+  }
+  30% {
+    opacity:1;
+  }
+  60% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.delay-top {
+  animation-delay: 2s;
+}
+
+.delay-mid {
+  animation-delay: 2.5s;
+}
+
+.delay-bot {
+  animation-delay: 3s;
+}

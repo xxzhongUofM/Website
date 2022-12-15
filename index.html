@@ -1,445 +1,141 @@
 <!DOCTYPE html>
 <html>
-<title>XiaoXiang Zhong</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('./pictures/cover.jpeg');
-  min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("./pictures/background2.jpeg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("./pictures/aurora.jpg");
-  min-height: 400px;
-}
-
-.clickedimg {
-  width: 50%;
-  height: 50%;
-}
-
-.side {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: flex;
-  justify-content: center;
-}
-
-hr {
-  border: 2px solid grey;
-}
-
-div {
-  text-align: center;
-}
-
-h3 {
-  text-align: center;
-}
-
-.arrows {
-  position: absolute;
-  bottom: -200px;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  /* background: #fff; */
-  transform:  translateY(-80px) translateX(-50%) rotate(45deg);
-  /* opacity: 0; */
-}
-
-.arrows span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-  animation: animate 1.5s linear infinite;
-}
-
-.arrows span:nth-child(1) {
-  transform: translate(-15px, -15px);
-  /* animation-delay: -.4s; */
-}
-
-.arrows span:nth-child(2) {
-  transform: translate(0px, 0px);
-  /* animation-delay: -.2s; */
-}
-
-.arrows span:nth-child(3) {
-  transform: translate(15px, 15px);
-  /* animation-delay: 10s; */
-}
-
-@keyframes animate {
-  0% {
-    top: -5px;
-    left: -5px;
-    opacity: 0;
-  }
-  25% {
-    top: 0px;
-    left: 0px;
-    opacity: 1;
-  }
-  50%, 100% {
-    top: 5px;
-    left: 5px;
-    opacity: 0;
-  }
-}
-
-.sexy_line{ 
-    display:block;
-    border:none;
-    color:white;
-    height:1px;
-    background:black;
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 700, from(#000), to(rgb(220, 220, 220)));
-}
-
-
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-</style>
+<head>
+  <title>XiaoXiang Zhong</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="actions.js"></script>
+</head>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <br /><br />
-    <span class="w3-center w3-padding-large w3-text-white w3-xlarge w3-wide w3-animate-opacity">Welcome!</span>
-    <div class="arrows">
-      <span>
-        <span>
-          <span>
-          </span>
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-<!-- Container (About Section) -->
-<div id="about" style="background-color: rgb(220, 220, 220);">
-  <br /> <br />
-  <h3>ABOUT ME</h3>
-  <div class="side">
-    <div>
-      <img src="./pictures/profile.jpeg" class="w3-round w3-image" alt="Photo of Me" width="300" height="300">
-    </div>
-
-    <div style="width: 400px; margin-left: 50px;">
-      <p> Yahallo! My name is Xiao and I graduated from University of Michigan in Ann Arbor in May 2020 with a 
-          dual Bachelor's degree in Electrical Engineering and Computer Science. 
-          I will be pursuing a Master's degree in Computer Science at Georgia Institute of Technology starting in Janurary 2021.
-          I have previous software internships at Siemens and Amazon. 
-          I moved to the US from Canada in fourth grade and I've been here ever since. 
-          I really like exploring nature and I especially like vast bodies of water.
-          My favorite season is winter because I love the cold and the snow.
-          Fun fact, this picture was taken in Hyde Park, London in the winter and it was pretty hard to balance on top of that fence. </p>
-    </div>
-  </div>
-  <br />
-  <h4>Hobbies</h4>
-  <h6>Click on them for more information!</h6>
-  <div class="side" >
-    <div>
-      <img src="./pictures/anime.png" style="width: 300px; height: 200px; margin: 30px;" onclick="onClick(this)" class="w3-hover-opacity" alt="anime">
-      <h6><b>Watching Anime</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/piano.jpg" style="width: 300px; height: 200px; margin: 30px;" onclick="onClick(this)" class="w3-hover-opacity" alt="piano">
-      <h6><b>Playing Piano</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/hiking.jpeg" style="width: 300px; height: 200px; margin: 30px;" onclick="onClick(this)" class="w3-hover-opacity" alt="hiking">
-      <h6><b>Hiking</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/urf.jpeg" style="width: 300px; height: 200px; margin: 30px;" onclick="onClick(this)" class="w3-hover-opacity" alt="urf">
-      <h6><b>"Playing" League of Legends</b></h6>
-    </div>
-  </div>
-
-<br /><br />
-</div>
-
-
-<!--put more filler for about me here -->
-
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-black w3-wide">PORTFOLIO</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div id="portfolio"></div>
-<div style="background-color: rgb(220, 220, 220);">
-
-<br />
-<br />
-<br />
-  <h2>MY PROJECTS</h2>
-  <h5>Click on the pictures for information and to play!</h5>
-  <a href="./CS Resume Intern.pdf" target="_blank">Resume</a>
-  <br />
-  <br />
-  <div>
-    <span class="sexy_line"></span>
-  </div>
-  <!-- <br /> -->
-  <h3>Games</h3>
-  <br />
-  
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="side">
-    <div>
-      <img src="./pictures/tutorial1.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="tutorial1">
-      <h6><b>Super RollABall</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/tutorial2.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="tutorial2">
-      <h6><b>Super Flappy Bird</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/Zelda.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="Zelda">
-      <h6><b>The Legend of Zelda, Dungeon</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/UnityChan.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="UnityChan">
-      <h6><b>Super UnityChan Galaxy</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/GrapeKun.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="GrapeKun">
-      <h6><b>GrapeKun's Quest</b></h6>
-    </div>
-  </div>
-
-<br /><br />
-<div>
-  <span class="sexy_line"></span>
-</div>
-<h3>Websites</h3>
-<br />
-
-  <div class="side">
-    <div>
-      <img src="./pictures/oscars.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="oscars">
-      <h6><b>Oscars Nominees</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/mardigras.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="mardigras">
-      <h6><b>Mardi Gras Parade Game</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/artists.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="artists">
-      <h6><b>Artist Search Engine</b></h6>
-    </div>
-
-    <div>
-      <img src="./pictures/clothes.png" style="width:80%" onclick="onClick(this)" class="w3-hover-opacity" alt="clothes">
-      <h6><b>Clothing Search Engine</b></h6>
-    </div>
-  </div>
-  <br /><br />
-  <div>
-    <span class="sexy_line"></span>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="clickedimg" style="overflow-y: scroll;">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div style="background-color: rgb(220, 220, 220);">
-  <div class="w3-content w3-container w3-padding-64" id="contact">
-    <h3 class="w3-center">Information</h3>
-    Feel free to contact me for information on my experiences
-
-    <div class="w3-row w3-padding-32 w3-section">
-      <div class="w3-col m4 w3-container">
-        <img src="./pictures/building.jpeg" class="w3-image w3-round" style="width:100%">
-      </div>
-      <div class="w3-col m8 w3-panel">
-        <div class="w3-large w3-margin-bottom">
-          <i class="fa fa-map-marker fa-fw w3-xlarge w3-margin-right"></i> Detroit, MI<br>
-          <i class="fa fa-phone fa-fw w3-xlarge w3-margin-right"></i> Phone: (248) 513-1288<br>
-          <i class="fa fa-envelope fa-fw w3-xlarge w3-margin-right"></i> Email: xxzhong@umich.edu<br><br /><br />
-          Companies I've worked at
-          <div>
-            <span class="sexy_line" style="background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(#000), to(rgb(220, 220, 220)))"></span>
-          </div>
-          <br />
-          <img src="./pictures/lightmate.jpeg" style="width: 60px; height: 60px; margin: 30px;">
-          <img src="./pictures/siemens.png" style="width: 60px; height: 60px; margin: 30px;">
-          <img src="./pictures/amazonlogo.png" style="width: 60px; height: 60px; margin: 30px;">
+  <!-- Welcome image -->
+  <div class="welcome-img background-img container">
+    <div class="center-txt">
+      <br /> 
+      <br />
+      <br />
+      <div class="large-font white-color flex center-from-center">
+        <div class="animate-left-right ">
+          Welcome!
         </div>
       </div>
+      <br />
+      <br />
+      <!-- down arrows under welcome -->
+      <div class="arrow-viewbox center-from-center">
+        <svg class="arrows animate-down-arrow delay-top" viewBox="0 0 60 60">
+          <path d="M0,0 L30,32 L60,0" stroke="white" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="arrow-viewbox center-from-center">
+        <svg class="arrows animate-down-arrow delay-mid" viewBox="0 0 60 60">
+          <path d="M0,25 L30,57 L60,25" stroke="white" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="arrow-viewbox center-from-center">
+        <svg class="arrows animate-down-arrow delay-bot" viewBox="0 0 60 83">
+          <path d="M0,50 L30,82 L60,50" stroke="white" stroke-width="2"></path>
+        </svg>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a class="fa fa-facebook-official w3-hover-opacity" style="margin: 15px; text-decoration: none;" href="https://www.facebook.com/xiaoxiang.zhong.5/" target="_blank"></a>
-    <a class="fa fa-linkedin w3-hover-opacity" style="margin: 15px; text-decoration: none;" href="https://www.linkedin.com/in/xiao-xiang-zhong-036554144/" target="_blank"></a>
+  <div class="container">
+    <div id="about">
+      <br /> <br />
+      <h2>ABOUT ME</h2>
+      <div class="flex">
+        <div>
+          <img class="about-me-img">
+        </div>
+    
+        <div class="about-me-text">
+          <p> Yahallo! My name is Xiao and I graduated from University of Michigan in Ann Arbor on April 30th, 2020 with a 
+              dual Bachelor's degree in Electrical Engineering and Computer Science. 
+              I am currently pursuing a Master's degree in Computer Science at Georgia Institute of Technology specializing in Computing Systems.
+              I have previous software internships at Siemens, Amazon, and Facebook. 
+              I moved to the US from Canada in fourth grade and I've been here ever since. 
+              I really like exploring nature and I especially like vast bodies of water.
+              My favorite season is winter because I love the cold and the snow.
+              Fun fact, this picture was taken at the Chicago Museum of Ice Cream.</p>
+        </div>
+      </div>
+      <br />
+      <div>
+        <span class="line"></span>
+      </div>
+      <h3>Hobbies</h3>
+      <h5>Click on them for more information!</h5>
+      <div class="flex" >
+        <div>
+          <img onclick="open_popup(this, 'hobby-1')" class="hover-opacity hobby-img hobby-1">
+          <h5>Cat Time</h5>
+        </div>
+    
+        <div>
+          <img onclick="open_popup(this, 'hobby-2')" class="hover-opacity hobby-img hobby-2">
+          <h5>Playing Piano</h5>
+        </div>
+    
+        <div>
+          <img onclick="open_popup(this, 'hobby-3')" class="hover-opacity hobby-img hobby-3">
+          <h5>Hiking</h5>
+        </div>
+    
+        <div>
+          <img onclick="open_popup(this, 'hobby-4')" class="hover-opacity hobby-img hobby-4">
+          <h5>Watching Shows</h5>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
   </div>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  if (element.alt == "tutorial1") {
-    captionText.innerHTML = "Introduction to Unity: Super RollABall" + "<br />" + "<br />" + "Super RollABall was my first Unity game. This was tutorial one in EECS 494 for students to establish basic familiarity and experience with the Unity game engine." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Super-RollABall/index.html" target="_blank">Play Now!</a>' + "<br />" + "Use the arrow keys to move and the space button to jump.";
-  }
-  else if (element.alt == "tutorial2") {
-    captionText.innerHTML = "Introduction to Unity: Super Flappy Bird" + "<br />" + "<br />" + "For tutorial two in EECS 494, we were tasked to remake Flappy Bird and we learned how to repeat the terrain." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Super-Flappy-Bird/index.html" target="_blank">Play Now!</a>' + "<br />" + "Player 1 (Yellow) left click to fly, Player 2 (Green) space bar to fly";
-  }
-  else if (element.alt == "Zelda") {
-    captionText.innerHTML = "The Legend of Zelda, Dungeon" + "<br />" + "<br /s>" + "After quickly ramping us up on Unity skills, EECS 494 officially released project 1, which was remaking part of a classic NES game. We were allowed one other team member, so my friend Nicholas Oo and I partnered up and chose to remake Zelda. We also had to create our own custom dungeon level with a uninque mechanic." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Zelda/index.html" target="_blank">Play Now!</a>' + "<br />" + "Arrow keys to move, Z and X to attack, 1 for cheat, 4 for custom level";
-  }
-  else if (element.alt == "UnityChan") {
-    captionText.innerHTML = "Super UnityChan Galaxy" + "<br />" + "<br />" + "Project 2 for EECS 494 was making our own unique game. I saw a free template of UnityChan, so I decided to make her the main character. Pick up blocks to move your way through this platform type game." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Super-UnityChan-Galaxy/index.html" target="_blank">Play Now!</a>' + "<br />" + "Game console controller required to play";
-  }
-  else if (element.alt == "GrapeKun") {
-    captionText.innerHTML = "Grape Kun's Quest" + "<br />" + "<br />" + "Project 3 was the final big project for EECS 494 and each group presented their project in the Winter 2020 Computer Games Showcase. My group consisted of me and four other people: Nicholas Oo, Alan Yu, Alan Wu, and Gary Luo. We revolved our game around comedy and rocket jumping. We had other groups playtest our game every week so we were constantly improving the gameplay."+ "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/GrapeKun-s-Quest/index.html" target="_blank">Play Now!</a>' + "<br />" + "Use a mouse for an easier time";;
-  }
-  else if (element.alt == "anime") {
-    captionText.innerHTML = "My favorite hobby, and the one I spend the most time on, is watching anime. I have watched quite a lot different ones, and I'm even caught up on longer animes such as One Piece and Detective Conan. My three favorite categories are romance, action, and horror. Feel free to check out" + '<a href="https://myanimelist.net/profile/2dsuperiorto3d" target="_blank"> MyAnimeList </a>' + "to see which animes I've watched and liked, though the ratings probably won't help since I love almost every anime I've watched."
-  }
-  else if (element.alt == "piano") {
-    captionText.innerHTML = "I sometimes play the piano too when I want to feel productive in my free time. Currently, I'm trying to learn " + '<a href="https://www.youtube.com/watch?v=YJMIIxm1bGo" target="_blank">Winter Wind</a>' + " and "+ '<a href="https://www.youtube.com/watch?v=8XFMZs_7nOA" target="_blank">Rondo a Capriccio</a>' +". I've learned around twelve pages of Rondo a Capriccio and one page of Winter Wind. Both songs are beautiful, and I have to thank the anime Shigatsu wa Kimi no Uso for introducing me to Winter Wind."
-  }
-  else if (element.alt == "hiking") {
-    captionText.innerHTML = "I really like to go hiking with my friends when we all get the chance to. I like the scenaries and it gives me an excuse to not look at my phone. The photo above was actually taken by me on top of Mt. Baker-Snoqualmie, in front of Snow Lake."
-  }
-  else if (element.alt == "urf") {
-    captionText.innerHTML = "I also play a lot of urf when it's available. I would play with my friends and mess around with them in-game. However, when urf is not available, I would occasionally be playing TFT instead since I'm really bad at the regular League game.";
-  }
-  else if (element.alt == "oscars") {
-    captionText.innerHTML = "The first project in EECS 493 was an introduction to HTML and CSS. The project was simply to list the current and past oscar nominees and circle the winners." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Oscar-Nominees/index.html" target="_blank">Visit Now!</a>'
-  }
-  else if (element.alt == "mardigras") {
-    captionText.innerHTML = "The second project in EECS 493 was a javascript game. The main concept of the game is to run around the map using the arrow keys and to collect what the parade float shoots out, with different items having different point values. The user can stand in front of the float to stop it from moving, and the user can also change how fast the float shoots out items. The save button saves the user input interval, while the toss button disregards the user input interval. The user cannot die." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Mardi-Gras/index.html" target="_blank">Visit Now!</a>';
-  }
-  else if (element.alt == "artists") {
-    captionText.innerHTML = "The third project in EECS 493 was an artist search engine. I was tasked to recreate a basic apple music search engine and utilized Axios for itunes data retrival, and Vue.js to display the results. Try Adele as an example." + "<br />" + "<br />" + '<a href="https://xxzhonguofm.github.io/Artists-Search/index.html" target="_blank">Visit Now!</a>';
-  }
-  else if (element.alt == "clothes") {
-    captionText.innerHTML = "The fourth project in EECS 493 was the biggest one and was to be done as a group. The theme was to survive winter in Ann Arbor, and my team consisted of me and three other people: Nicholas Oo, Steven Wang, and Bradley Huang. Our project was to list out clothes on sale from major retailers that people can buy from. To do this, we had to use BeautifulSoup and python to scrap data from retail websites. Our website requires a terminal and python to run. There's a how_to_run.txt in my link that shows all the required steps." + "<br />" + "<br / >" + '<a href="https://github.com/xxzhongUofM/My-Winter-Closet" target="_blank">Visit Now!</a>';
-  }
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
-
+  <!-- popup for onclick -->
+  <div id="popup" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <img id="popupImg">
+      <p id="popupTxt" class="popup-txt"></p>
+    </div>
+  </div>
+  <div class="portfolio-img background-img container">
+    
+  </div>
+  <div class="container">
+    <div id="portfolio">
+      <br /> <br />
+      <h2>PROJECTS</h2>
+      <a href="./CS Resume.pdf" target="_blank">Resume</a>
+      <br />
+      <br />
+      <div>
+        <span class="line"></span>
+      </div>
+      <h3>Games</h3>
+      <h5>Click on the pictures for information and to play!</h5>
+      <div class="flex" >
+        <div>
+          <img onclick="open_popup(this, 'game-1')" class="hover-opacity hobby-img game-1">
+          <h5>Cat Time</h5>
+        </div>
+        <div>
+          <img onclick="open_popup(this, 'game-2')" class="hover-opacity hobby-img game-2">
+          <h5>Playing Piano</h5>
+        </div>
+        <div>
+          <img onclick="open_popup(this, 'game-3')" class="hover-opacity hobby-img game-3">
+          <h5>Hiking</h5>
+        </div>
+        <div>
+          <img onclick="open_popup(this, 'game-4')" class="hover-opacity hobby-img game-4">
+          <h5>Watching Shows</h5>
+        </div>
+        <div>
+          <img onclick="open_popup(this, 'game-5')" class="hover-opacity hobby-img game-5">
+          <h5>Watching Shows</h5>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
 </body>
 </html>
+
