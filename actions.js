@@ -21,8 +21,8 @@ function open_popup(element, imgStr) {
     document.getElementById('popupTxt').innerText = 
     'Meet Snowball! He is a really friendly yet naughty kitten. \
     He\'s always hungry and chases everything. His birthday is August 11th, 2022, so he is approximately ' + ageString + 
-    ' Someone found him as a stray in Lansing, MI, and I adopted him on October 7th, 2022. He was really chunky, and had fleas and worms. \
-    But after a few vet visits and treatments, he\'s now completely parasite free. If the pictures are moving too fast, hover over them to stop.';
+    ' Someone found him as a stray in Lansing, MI, and I adopted him on October 7th, 2022. He was chunky and had parasites, \
+    but after a few vet visits and treatments, he\'s now completely parasite-free. If the pictures are moving too fast, hover over them to pauses.';
   } else if (imgStr === 'hobby-3') {
     document.getElementById('popupTxt').innerText = 
     'I really like to go hiking with my friends when we all get the chance to. \
