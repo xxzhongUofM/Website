@@ -43,7 +43,7 @@
       <h2>ABOUT ME</h2>
       <div class="flex">
         <div>
-          <img class="about-me-img">
+          <img src="pictures/profile.JPG" class="about-me-img">
         </div>
     
         <div class="about-me-text">
@@ -65,22 +65,22 @@
       <h5>Click on them for more information!</h5>
       <div class="flex" >
         <div>
-          <img onclick="open_popup(this, 'hobby-1')" class="hover-opacity hobby-img hobby-1">
+          <img src="pictures/snowball.jpeg" onclick="open_popup(this, 'hobby-1')" class="hover-opacity hobby-img">
           <h5>Cat Time</h5>
         </div>
     
         <div>
-          <img onclick="open_music_popup(this, 'hobby-2')" class="hover-opacity hobby-img hobby-2">
+          <img src="pictures/piano.jpg" onclick="open_music_popup(this, 'hobby-2')" class="hover-opacity hobby-img">
           <h5>Playing Piano</h5>
         </div>
     
         <div>
-          <img onclick="open_popup(this, 'hobby-3')" class="hover-opacity hobby-img hobby-3">
+          <img src="pictures/hiking.jpeg" onclick="open_popup(this, 'hobby-3')" class="hover-opacity hobby-img">
           <h5>Hiking</h5>
         </div>
     
         <div>
-          <img onclick="open_popup(this, 'hobby-4')" class="hover-opacity hobby-img hobby-4">
+          <img src="pictures/alchemy.png" onclick="open_popup(this, 'hobby-4')" class="hover-opacity hobby-img">
           <h5>Watching Shows</h5>
         </div>
       </div>
@@ -106,7 +106,7 @@
           </div>
       </div>
 
-      <img id="popupImg">
+      <img id="popupImg" src="pictures/hiking.jpeg" class="popup-img">
       <p id="popupTxt" class="popup-txt"></p>
     </div>
   </div>
@@ -114,7 +114,7 @@
     <!-- music popup for onclick so the  music is not reset after every popup overwritee -->
   <div id="music-popup" class="popup disable-select" onclick="hide_popup(this)">
     <div class="container">
-      <img id="music-popupImg">
+      <img src="pictures/piano.jpg" id="music-popupImg">
       <p id="music-popupTxt" class="popup-txt"></p>
         Winter Wind: 
         <br /> 
@@ -142,36 +142,58 @@
       <div>
         <span class="line"></span>
       </div>
-      <h3>Games</h3>
-      <h5>Click on the pictures for information and to play!</h5>
+      <h3>Work Experiences</h3>
       <div class="flex" >
         <div>
-          <img onclick="open_popup(this, 'game-1')" class="hover-opacity game-img game-1">
-          <h5>Super RollABall</h5>
+          <img src="pictures/metalogo.png" onclick="open_popup(this, 'work-1')" class="hover-opacity work-img">
+          <h5>Meta</h5>
         </div>
         <div>
-          <img onclick="open_popup(this, 'game-2')" class="hover-opacity game-img game-2">
-          <h5>Super Flappy Bird</h5>
+          <img src="pictures/gmlogo.png" onclick="open_popup(this, 'work-2')" class="hover-opacity work-img">
+          <h5>General Motors</h5>
         </div>
         <div>
-          <img onclick="open_popup(this, 'game-3')" class="hover-opacity game-img game-3">
-          <h5>The Legend of Zelda, Dungeon</h5>
+          <img src="pictures/amazonlogo.png" onclick="open_popup(this, 'work-3')" class="hover-opacity work-img">
+          <h5>Amazon</h5>
         </div>
         <div>
-          <img onclick="open_popup(this, 'game-4')" class="hover-opacity game-img game-4">
-          <h5>Super UnityChan Galaxy</h5>
-        </div>
-        <div>
-          <img onclick="open_popup(this, 'game-5')" class="hover-opacity game-img game-5">
-          <h5>GrapeKun's Quest</h5>
+          <img src="pictures/siemenslogo.png" onclick="open_popup(this, 'work-4')" class="hover-opacity work-img">
+          <h5>Siemens Healthineers</h5>
         </div>
       </div>
       <br />
       <br />
+        <div>
+          <span class="line"></span>
+        </div>
+        <h3>Games</h3>
+        <div class="flex" >
+          <div>
+            <img src="pictures/tutorial1.png" onclick="open_popup(this, 'game-1')" class="hover-opacity game-img">
+            <h5>Super RollABall</h5>
+          </div>
+          <div>
+            <img src="pictures/tutorial2.png" onclick="open_popup(this, 'game-2')" class="hover-opacity game-img">
+            <h5>Super Flappy Bird</h5>
+          </div>
+          <div>
+            <img src="pictures/Zelda.png" onclick="open_popup(this, 'game-3')" class="hover-opacity game-img">
+            <h5>The Legend of Zelda, Dungeon</h5>
+          </div>
+          <div>
+            <img src="pictures/UnityChan.png" onclick="open_popup(this, 'game-4')" class="hover-opacity game-img">
+            <h5>Super UnityChan Galaxy</h5>
+          </div>
+          <div>
+            <img src="pictures/GrapeKun.png" onclick="open_popup(this, 'game-5')" class="hover-opacity game-img">
+            <h5>GrapeKun's Quest</h5>
+          </div>
+        </div>
+        <br />
+        <br />
       <div>
         <span class="line"></span>
       </div>
-      <h3>Games</h3>
     </div>
   </div>
 </body>

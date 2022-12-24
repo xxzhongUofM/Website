@@ -47,6 +47,12 @@ a {
   margin: 30px;
 }
 
+.work-img {
+  width: auto;
+  height: 150px;
+  margin: 30px;
+}
+
 .game-img {
   width: auto;
   height: 250px;
@@ -54,7 +60,6 @@ a {
 }
 
 .about-me-img {
-  content: url("pictures/profile.JPG");
   max-width: 100%;
   width: 300px;
   height: auto;
@@ -103,42 +108,6 @@ a {
   height:1px;
   background:black;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 700, from(#000), to(rgb(220, 220, 220)));
-}
-
-.hobby-1 {
-  content: url("pictures/snowball.jpeg");
-}
-
-.hobby-2 {
-  content: url("pictures/piano.jpg");
-}
-
-.hobby-3 {
-  content: url("pictures/hiking.jpeg");
-}
-
-.hobby-4 {
-  content: url("pictures/alchemy.png");
-}
-
-.game-1 {
-  content: url("pictures/tutorial1.png")
-}
-
-.game-2 {
-  content: url("pictures/tutorial2.png")
-}
-
-.game-3 {
-  content: url("pictures/Zelda.png")
-}
-
-.game-4 {
-  content: url("pictures/UnityChan.png")
-}
-
-.game-5 {
-  content: url("pictures/GrapeKun.png")
 }
 
 .about-me-text {
