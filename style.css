@@ -32,12 +32,12 @@ a {
 }
 
 .welcome-img {
-  background-image: url('./pictures/cover.jpeg');
+  background-image: url('pictures/cover.jpeg');
   min-height: 100%;
 }
 
 .portfolio-img {
-  background-image: url('./pictures/portfolio.png');
+  background-image: url('pictures/portfolio.png');
   padding-top: 300px;
 }
 
@@ -54,7 +54,7 @@ a {
 }
 
 .about-me-img {
-  content: url("./pictures/profile.JPG");
+  content: url("pictures/profile.JPG");
   max-width: 100%;
   width: 300px;
   height: auto;
@@ -106,39 +106,39 @@ a {
 }
 
 .hobby-1 {
-  content: url("./pictures/snowball.jpeg");
+  content: url("pictures/snowball.jpeg");
 }
 
 .hobby-2 {
-  content: url("./pictures/piano.jpg");
+  content: url("pictures/piano.jpg");
 }
 
 .hobby-3 {
-  content: url("./pictures/hiking.jpeg");
+  content: url("pictures/hiking.jpeg");
 }
 
 .hobby-4 {
-  content: url("./pictures/alchemy.png");
+  content: url("pictures/alchemy.png");
 }
 
 .game-1 {
-  content: url("./pictures/tutorial1.png")
+  content: url("pictures/tutorial1.png")
 }
 
 .game-2 {
-  content: url("./pictures/tutorial2.png")
+  content: url("pictures/tutorial2.png")
 }
 
 .game-3 {
-  content: url("./pictures/Zelda.png")
+  content: url("pictures/Zelda.png")
 }
 
 .game-4 {
-  content: url("./pictures/UnityChan.png")
+  content: url("pictures/UnityChan.png")
 }
 
 .game-5 {
-  content: url("./pictures/GrapeKun.png")
+  content: url("pictures/GrapeKun.png")
 }
 
 .about-me-text {
