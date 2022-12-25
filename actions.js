@@ -59,7 +59,12 @@ function open_popup(element, imgStr) {
     '<a href=\'https://developer.oculus.com/documentation/unity/ts-ovrstats/\' target=\'_blank\'>OVR Metrics Tool</a> in Oculus VR';
   } else if (imgStr == 'work-2') {
     document.getElementById('popupTxt').innerText = 
-    'I have worked at GM for about a year and a half from Janury 2021 to May 2022 while pursuing my masters degree. (Description in progress)';
+    'I have worked at GM for about a year and a half from Janury 2021 to May 2022 while pursuing my master\'s degree. \
+    GM\'s internal time tracking tool is very old, so my team and I were tasked with creating a completely new one with an updated tech stack. \
+    Originally, I was part of the UI team, and we mainly focused on creating different sub pages in Angular with HTML and Typescript. \
+    After the web pages were created, we became more of a full stack team, fixing any frontend bugs, as well as helping the backend team \
+    finish the sub pages in Java and Postgres. The main customer of the web page is the business team, and I worked really closely with them \
+    to complete their requirements. From what I\'ve been told, this tool is set to be released in February 2023.';
   } else if (imgStr == 'work-3') {
     document.getElementById('popupTxt').innerText = 
     'I interned at Amazon from June 2020 to August 2020. (Description in progress)';
