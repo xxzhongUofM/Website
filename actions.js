@@ -47,30 +47,43 @@ function open_popup(element, imgStr) {
   } 
   
   else if (imgStr == 'work-1') {
+    document.getElementById('popupImg').src = 'pictures/metalogowhite.png';
     document.getElementById('popupTxt').innerHTML = 
-    'My most recent internship was at Meta from May 2022 to August 2022. I worked under the Reality Labs Pillar, specifically with AR glasses. \
-    Facebook\'s AR environment didn\'t have a way to measure the glasses\' software and hardware performance, so I was tasked with creating a \
+    'My most recent internship was at Meta from May 2022 to August 2022 in Seattle, Washington. I worked under the Reality Labs Pillar, specifically with AR glasses. \
+    <br /><br /> Facebook\'s AR environment didn\'t have a way to measure the glasses\' software and hardware performance, so I was tasked with creating a \
     performance tracking overlay. First, I created a settings app in Android Java to let users choose which metrics they want to see. \
     Then, I calculated metric performances, such as FPS, in C++. Finally, I used a little bit of OpenGL in C++ to draw a layer on top of \
     every app to act as the overlay so users could see the device performance while running other different apps in the background. \
     I still had time after I completed my project, so I also created a shell script that internal developers could run to add additional metrics \
-    to the settings and overlay instantly. The only code they would need to add would be how the metric is calculated in C++. Due to NDAs, I\'m \
+    to the settings and overlay instantly. The only code they would need to add would be how the metric is calculated in C++. <br /> <br />Due to NDAs, I\'m \
     unable to share specific pictures or other non-approved details, but a similar example would be the ' + 
     '<a href=\'https://developer.oculus.com/documentation/unity/ts-ovrstats/\' target=\'_blank\'>OVR Metrics Tool</a> in Oculus VR';
   } else if (imgStr == 'work-2') {
-    document.getElementById('popupTxt').innerText = 
-    'I have worked at GM for about a year and a half from Janury 2021 to May 2022 while pursuing my master\'s degree. \
-    GM\'s internal time tracking tool is very old, so my team and I were tasked with creating a completely new one with an updated tech stack. \
+    document.getElementById('popupTxt').innerHTML = 
+    'I have worked at GM for about a year and a half from Janury 2021 to May 2022 in Warren, Michigan while pursuing my master\'s degree. \
+    <br /><br /> GM\'s internal time tracking tool is very old, so my team and I were tasked with creating a completely new one with an updated tech stack. \
     Originally, I was part of the UI team, and we mainly focused on creating different sub pages in Angular with HTML and Typescript. \
     After the web pages were created, we became more of a full stack team, fixing any frontend bugs, as well as helping the backend team \
     finish the sub pages in Java and Postgres. The main customer of the web page is the business team, and I worked really closely with them \
     to complete their requirements. From what I\'ve been told, this tool is set to be released in February 2023.';
   } else if (imgStr == 'work-3') {
-    document.getElementById('popupTxt').innerText = 
-    'I interned at Amazon from June 2020 to August 2020. (Description in progress)';
+    document.getElementById('popupImg').src = 'pictures/amazonlogowhite.png';
+    document.getElementById('popupTxt').innerHTML = 
+    'I interned at Amazon from June 2020 to August 2020 in Detroit, Michigan. I worked under the Marketplace Web Service Pillar in the \
+    Developer User Experience team. <br /><br/> Amazon MWS internal developers have a forum page that external sellers can use to leave feedback, such as\
+    issues, suggestions, compliments, etc. However, developers will have to read through each feedback one by one to process them, which is \
+    very time consuming. I was tasked to make processing easier by creating a feedback collection system. In the forum, I added a widget that allows \
+    sellers to leave feedback in the forum page so that the forum is focused on discussions, and the widget is focused on one sided comments and issues for \
+    internal developers. I used AWS DynamoDB to collect the feedback and fed them into AWS Comprehend to run NLP with \
+    <a href=\'https://docs.aws.amazon.com/comprehend/latest/dg/topic-modeling.html\' target=\'_blank\'>topic modeling</a> \
+    to find the main topics of discussion. I created a React dashboard using Chart.js to graph out the top ten topics being discussed. \
+    Developers are then able to look at the dashboard to quickly find if a lot of people are talking about certain issues and can read \
+    through less feedback to pinpoint issues. I successfully completed my project, and I was told that it was released to production \
+    the week after my internship ended. <br/><br/> The dashboard was meant for internal developers so I\'m unable to share it, but the widget can be seen \
+    <a href=\'https://sellercentral.amazon.com/\' target=\'_blank\'>here</a> on the bottom right of the web page.';
   } else if (imgStr == 'work-4') {
     document.getElementById('popupTxt').innerText = 
-    'My first internship was at Siemens Healthineers from May 2019 to August 2019. (Description in progress)';
+    'My first internship was at Siemens Healthineers from May 2019 to August 2019 in Issaquah, Washington. (Description in progress)';
   } 
   
   else if (imgStr == 'game-1') {
