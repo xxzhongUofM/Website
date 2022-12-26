@@ -82,8 +82,14 @@ function open_popup(element, imgStr) {
     the week after my internship ended. <br/><br/> The dashboard was meant for internal developers so I\'m unable to share it, but the widget can be seen \
     <a href=\'https://sellercentral.amazon.com/\' target=\'_blank\'>here</a> on the bottom right of the web page.';
   } else if (imgStr == 'work-4') {
-    document.getElementById('popupTxt').innerText = 
-    'My first internship was at Siemens Healthineers from May 2019 to August 2019 in Issaquah, Washington. (Description in progress)';
+    document.getElementById('popupTxt').innerHTML = 
+    'My first internship was at Siemens Healthineers from May 2019 to August 2019 in Issaquah, Washington under the Ultrasound team. <br/><br/>\
+    The ultrasound machines switched from C++ to C#, but the data generations were still in C++ so the ultrasound was not able to process test data. \
+    I was tasked to create a reports driver to be installed into the ultrasound to connect the ultrasound\'s C# code to the reports\' C++ code. \
+    I created the application in C# and after finishing the project, I also played around with XML files to fix some UI configurations. \
+    My manager emailed me a few weeks after my internship to let me know that this project was successfully pushed to production. \
+    <br/><br/> There\'s not much I can show since it was an internal tool, but the ultrasound UI looked similar to \
+    <a href=\'https://marketing.webassets.siemens-healthineers.com/1800000006813247/7513f0fc6a2a/v/e760f95cb23c/siemens-healthineers-news-and-events-AI_Rad_Companion_confirmation_user_interface.jpg\' target=\'_blank\'>this</a>.';
   } 
   
   else if (imgStr == 'game-1') {
