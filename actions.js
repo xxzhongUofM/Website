@@ -37,7 +37,7 @@ function open_popup(element, imgStr) {
   } else if (imgStr === 'hobby-3') {
     document.getElementById('popupTxt').innerText = 
     'I really like to go hiking with my friends when we all get the chance to. \
-    I like the scenaries and it gives me an excuse to not look at my phone. \
+    I like the scenery and it gives me an excuse to not look at my phone. \
     The photo above was actually taken by me on top of Mt. Baker-Snoqualmie, in front of Snow Lake.';
   } else if (imgStr === 'hobby-4') {
     document.getElementById('popupTxt').innerText = 
