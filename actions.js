@@ -143,6 +143,10 @@ function open_music_popup(element, imgStr) {
   }
 }
 
+function open_map_popup() {
+  document.getElementById('map-popup').style.display = 'block';
+}
+
 function hide_popup(element) {
   element.style.display = 'none';
 }
@@ -150,7 +154,7 @@ function hide_popup(element) {
 function initMap() {
   // Novi to Malibu
   const departDirectionsService = new google.maps.DirectionsService;
-  const departDirectionsDisplay = new google.maps.DirectionsRenderer;
+  const departDirectionsRenderer = new google.maps.DirectionsRenderer;
 
   const departWaypoints = {
     'Novi': {'location': {lat: 42.480629458143966, lng: -83.47552595949}, 'stopover': true},
@@ -160,33 +164,42 @@ function initMap() {
     'Grand Canyon': {'location': {lat: 36.0529861506131, lng: -112.08375253317324}, 'stopover': true},
     'Malibu': {'location': {lat: 34.02251688338473, lng: -118.83122196352342}, 'stopover': true},
   }
-  const routeOrder = ['Novi', 'Maquoketa Caves', 'Rocky Mountains'];
   const departMap = new google.maps.Map(document.getElementById('departMap'), {
     zoom: 4,
     center: departWaypoints['Novi']['location'],
   });
-  const departMarker = new google.maps.Marker({
-    position: departWaypoints['Novi']['location'],
-    departMap,
-    title: 'Novi',
-  });
 
-  departDirectionsDisplay.setMap(departMap);
+  departDirectionsRenderer.setMap(departMap);
   
   // remove start and stop for stops along the way. This removes Novi and Malibu from departWaypoints and stores it into stops
   const {Novi, Malibu, ...departStops} = departWaypoints;
-  calculateAndDisplayRoute(departDirectionsService, departDirectionsDisplay, 
+  calculateAndDisplayRoute(departDirectionsService, departDirectionsRenderer, 
     departWaypoints['Novi']['location'], departWaypoints['Malibu']['location'], Object.values(departStops));
+  
+  // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
+  departDirectionsRenderer.addListener('directions_changed', () => {
+    setTimeout(() => {
+      const departMarkers = departDirectionsRenderer.h.markers;
+      console.log('markers', departMarkers);
+      for (m of departMarkers) {
+        // need to store m into currentMarker const so event listeners don't overlap 
+        const currentMarker = m;
+        currentMarker.addListener('click', () => {
+          // open image popup here
+          console.log('aloha', currentMarker.getTitle());
+          open_map_popup();
+        });
+      }
+    }, 100);
+  });
 
-  // google.maps.event.addListener(marker, 'click', function () {
-  //   // do something with this marker ...
-  //   // this.setTitle('I am clicked');
-  //   console.log('aloha');
-  // });
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   // Malibu to Novi
   const returnDirectionsService = new google.maps.DirectionsService;
-  const returnDirectionsDisplay = new google.maps.DirectionsRenderer;
+  const returnDirectionsRenderer = new google.maps.DirectionsRenderer;
 
   const returnWaypoints = {
     'Sequoia': {'location': {lat: 36.58201467225984, lng: -118.75142725563322}, 'stopover': true},
@@ -199,20 +212,32 @@ function initMap() {
     zoom: 4,
     center: departWaypoints['Malibu']['location'],
   });
-  const returnMarker = new google.maps.Marker({
-    position: departWaypoints['Malibu']['location'],
-    returnMap,
-    title: 'Malibu',
-  });
 
-  returnDirectionsDisplay.setMap(returnMap);
+  returnDirectionsRenderer.setMap(returnMap);
 
-  calculateAndDisplayRoute(returnDirectionsService, returnDirectionsDisplay, 
+  calculateAndDisplayRoute(returnDirectionsService, returnDirectionsRenderer, 
     departWaypoints['Malibu']['location'], departWaypoints['Novi']['location'], Object.values(returnWaypoints));
+
+  // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
+  returnDirectionsRenderer.addListener('directions_changed', () => {
+    setTimeout(() => {
+      const returnMarkers = returnDirectionsRenderer.h.markers;
+      console.log('markers', returnMarkers);
+      for (m of returnMarkers) {
+        // need to store m into currentMarker const so event listeners don't overlap 
+        const currentMarker = m;
+        currentMarker.addListener('click', () => {
+          // open image popup here
+          console.log('aloha2', currentMarker.getTitle());
+          open_map_popup();
+        });
+      }
+    }, 100);
+  });
   
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end, waypts) {
+function calculateAndDisplayRoute(directionsService, directionsRenderer, start, end, waypts) {
   directionsService.route({
     origin: start,
     destination: end,
@@ -220,7 +245,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, start, e
     travelMode: 'DRIVING'
   }, function(response, status) {
     if (status === 'OK') {
-      directionsDisplay.setDirections(response);
+      directionsRenderer.setDirections(response);
     } else {
       window.alert('Directions request failed due to ' + status);
     }
