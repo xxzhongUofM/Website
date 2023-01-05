@@ -134,17 +134,19 @@ function open_popup(element, imgStr) {
 
 function open_music_popup(element, imgStr) {
   if (imgStr === 'hobby-2') {
-    document.getElementById('music-popup').style.display = 'block';
-    document.getElementById('music-popupImg').className = 'popup-img ' + imgStr;
-    document.getElementById('music-popupTxt').innerHTML = 
+    document.getElementById('musicPopup').style.display = 'block';
+    document.getElementById('musicPopupImg').className = 'popup-img ' + imgStr;
+    document.getElementById('musicPopupTxt').innerHTML = 
     'I sometimes play the piano too when I want to feel productive in my free time. \
     Currently, I\'m trying to learn Winter Wind and Rondo a Capriccio. \
     I\'ve learned about twelve pages of Rondo a Capriccio and one page of Winter Wind.' + '<br />' + '<br />';
   }
 }
 
-function open_map_popup() {
-  document.getElementById('map-popup').style.display = 'block';
+function open_map_popup(waypointTitle) {
+  // Departure
+  document.getElementById('mapPopup').style.display = 'block';
+  document.getElementById('mapPopupTitle').innerText = waypointTitle;
 }
 
 function hide_popup(element) {
@@ -156,38 +158,40 @@ function initMap() {
   const departDirectionsService = new google.maps.DirectionsService;
   const departDirectionsRenderer = new google.maps.DirectionsRenderer;
 
+  const novi = {lat: 42.480629458143966, lng: -83.47552595949};
+  const malibu = {lat: 34.02251688338473, lng: -118.83122196352342};
+  
   const departWaypoints = {
-    'Novi': {'location': {lat: 42.480629458143966, lng: -83.47552595949}, 'stopover': true},
-    'Maquoketa Caves': {'location': {lat: 42.12047328743386, lng: -90.76665651478062}, 'stopover': true},
-    'Rocky Mountains': {'location': {lat: 40.31223809164115, lng: -105.64611496416849}, 'stopover': true},
-    'Zion': {'location': {lat: 37.28535096498882, lng: -112.94774491210671}, 'stopover': true},
-    'Grand Canyon': {'location': {lat: 36.0529861506131, lng: -112.08375253317324}, 'stopover': true},
-    'Malibu': {'location': {lat: 34.02251688338473, lng: -118.83122196352342}, 'stopover': true},
+    'Maquoketa Caves State Park': {'location': 'Maquoketa Caves State Park', 'stopover': true},
+    'Rocky Mountains National Park': {'location': 'Rocky Mountains National Park', 'stopover': true},
+    'Zion National Park': {'location': 'Zion National Park', 'stopover': true},
+    'Grand Canyon National Park': {'location': 'Grand Canyon National Park', 'stopover': true},
   }
+  const departCities = ['Novi, MI', ...Object.keys(departWaypoints), 'Zuma Beach'];
   const departMap = new google.maps.Map(document.getElementById('departMap'), {
     zoom: 4,
-    center: departWaypoints['Novi']['location'],
+    center: novi,
   });
 
   departDirectionsRenderer.setMap(departMap);
   
-  // remove start and stop for stops along the way. This removes Novi and Malibu from departWaypoints and stores it into stops
-  const {Novi, Malibu, ...departStops} = departWaypoints;
   calculateAndDisplayRoute(departDirectionsService, departDirectionsRenderer, 
-    departWaypoints['Novi']['location'], departWaypoints['Malibu']['location'], Object.values(departStops));
+    'Novi, MI', 'Zuma Beach, CA', Object.values(departWaypoints));
   
   // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
   departDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       const departMarkers = departDirectionsRenderer.h.markers;
       console.log('markers', departMarkers);
-      for (m of departMarkers) {
+      for (const[index, m] of departMarkers.entries()) {
+        m.setTitle(departCities[index]);
+        // m.setLabel(departCities[index]);
         // need to store m into currentMarker const so event listeners don't overlap 
         const currentMarker = m;
         currentMarker.addListener('click', () => {
           // open image popup here
           console.log('aloha', currentMarker.getTitle());
-          open_map_popup();
+          open_map_popup(currentMarker.getTitle());
         });
       }
     }, 100);
@@ -202,34 +206,37 @@ function initMap() {
   const returnDirectionsRenderer = new google.maps.DirectionsRenderer;
 
   const returnWaypoints = {
-    'Sequoia': {'location': {lat: 36.58201467225984, lng: -118.75142725563322}, 'stopover': true},
-    'Yosemite': {'location': {lat: 37.75007491174303, lng: -119.59571582302975}, 'stopover': true},
-    'Yellowstone': {'location': {lat: 44.66264041061778, lng: -111.10399540441166}, 'stopover': true},
-    'Rushmore': {'location': {lat: 43.879037827359326, lng: -103.45880796804}, 'stopover': true},
-    'Sioux Falls': {'location': {lat: 43.55838497392432, lng: -96.72270789724907}, 'stopover': true},
+    'Sequoia National Park': {'location': 'Sequoia National Park', 'stopover': true},
+    'Yosemite National Park': {'location': 'Yosemite National Park', 'stopover': true},
+    'Yellowstone National Park': {'location': 'Yellowstone National Park', 'stopover': true},
+    'Mount Rushmore National Memorial': {'location': 'Mount Rushmore National Memorial', 'stopover': true},
+    'Falls Park, SD': {'location': 'Falls Park, SD', 'stopover': true},
   }
+  const returnCities = ['Huntington Beach', ...Object.keys(returnWaypoints), 'Novi, MI'];
+
   const returnMap = new google.maps.Map(document.getElementById('returnMap'), {
     zoom: 4,
-    center: departWaypoints['Malibu']['location'],
+    center: malibu,
   });
 
   returnDirectionsRenderer.setMap(returnMap);
 
   calculateAndDisplayRoute(returnDirectionsService, returnDirectionsRenderer, 
-    departWaypoints['Malibu']['location'], departWaypoints['Novi']['location'], Object.values(returnWaypoints));
+    'Huntington Beach, CA', 'Novi, MI', Object.values(returnWaypoints));
 
   // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
   returnDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       const returnMarkers = returnDirectionsRenderer.h.markers;
       console.log('markers', returnMarkers);
-      for (m of returnMarkers) {
+      for (const [index, m] of returnMarkers.entries()) {
+        m.setTitle(returnCities[index]);
         // need to store m into currentMarker const so event listeners don't overlap 
         const currentMarker = m;
         currentMarker.addListener('click', () => {
           // open image popup here
           console.log('aloha2', currentMarker.getTitle());
-          open_map_popup();
+          open_map_popup(currentMarker.getTitle());
         });
       }
     }, 100);
