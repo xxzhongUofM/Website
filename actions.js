@@ -146,3 +146,85 @@ function open_music_popup(element, imgStr) {
 function hide_popup(element) {
   element.style.display = 'none';
 }
+
+function initMap() {
+  // Novi to Malibu
+  const departDirectionsService = new google.maps.DirectionsService;
+  const departDirectionsDisplay = new google.maps.DirectionsRenderer;
+
+  const departWaypoints = {
+    'Novi': {'location': {lat: 42.480629458143966, lng: -83.47552595949}, 'stopover': true},
+    'Maquoketa Caves': {'location': {lat: 42.12047328743386, lng: -90.76665651478062}, 'stopover': true},
+    'Rocky Mountains': {'location': {lat: 40.31223809164115, lng: -105.64611496416849}, 'stopover': true},
+    'Zion': {'location': {lat: 37.28535096498882, lng: -112.94774491210671}, 'stopover': true},
+    'Grand Canyon': {'location': {lat: 36.0529861506131, lng: -112.08375253317324}, 'stopover': true},
+    'Malibu': {'location': {lat: 34.02251688338473, lng: -118.83122196352342}, 'stopover': true},
+  }
+  const routeOrder = ['Novi', 'Maquoketa Caves', 'Rocky Mountains'];
+  const departMap = new google.maps.Map(document.getElementById('departMap'), {
+    zoom: 4,
+    center: departWaypoints['Novi']['location'],
+  });
+  const departMarker = new google.maps.Marker({
+    position: departWaypoints['Novi']['location'],
+    departMap,
+    title: 'Novi',
+  });
+
+  departDirectionsDisplay.setMap(departMap);
+  
+  // remove start and stop for stops along the way. This removes Novi and Malibu from departWaypoints and stores it into stops
+  const {Novi, Malibu, ...departStops} = departWaypoints;
+  calculateAndDisplayRoute(departDirectionsService, departDirectionsDisplay, 
+    departWaypoints['Novi']['location'], departWaypoints['Malibu']['location'], Object.values(departStops));
+
+  // google.maps.event.addListener(marker, 'click', function () {
+  //   // do something with this marker ...
+  //   // this.setTitle('I am clicked');
+  //   console.log('aloha');
+  // });
+
+  // Malibu to Novi
+  const returnDirectionsService = new google.maps.DirectionsService;
+  const returnDirectionsDisplay = new google.maps.DirectionsRenderer;
+
+  const returnWaypoints = {
+    'Sequoia': {'location': {lat: 36.58201467225984, lng: -118.75142725563322}, 'stopover': true},
+    'Yosemite': {'location': {lat: 37.75007491174303, lng: -119.59571582302975}, 'stopover': true},
+    'Yellowstone': {'location': {lat: 44.66264041061778, lng: -111.10399540441166}, 'stopover': true},
+    'Rushmore': {'location': {lat: 43.879037827359326, lng: -103.45880796804}, 'stopover': true},
+    'Sioux Falls': {'location': {lat: 43.55838497392432, lng: -96.72270789724907}, 'stopover': true},
+  }
+  const returnMap = new google.maps.Map(document.getElementById('returnMap'), {
+    zoom: 4,
+    center: departWaypoints['Malibu']['location'],
+  });
+  const returnMarker = new google.maps.Marker({
+    position: departWaypoints['Malibu']['location'],
+    returnMap,
+    title: 'Malibu',
+  });
+
+  returnDirectionsDisplay.setMap(returnMap);
+
+  calculateAndDisplayRoute(returnDirectionsService, returnDirectionsDisplay, 
+    departWaypoints['Malibu']['location'], departWaypoints['Novi']['location'], Object.values(returnWaypoints));
+  
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end, waypts) {
+  directionsService.route({
+    origin: start,
+    destination: end,
+    waypoints: waypts,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
+// window.initMap = initMap;

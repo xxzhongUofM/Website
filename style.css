@@ -13,6 +13,13 @@ body, html {
   margin: 0;
 }
 
+.map {
+  width: 70%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 a {
   color: inherit;
 }
@@ -38,6 +45,11 @@ a {
 
 .portfolio-img {
   background-image: url('pictures/portfolio.png');
+  padding-top: 300px;
+}
+
+.miscellaneous-img {
+  background-image: url('pictures/grandprismatic.png');
   padding-top: 300px;
 }
 
