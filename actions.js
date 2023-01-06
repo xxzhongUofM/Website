@@ -212,7 +212,6 @@ function initMap() {
     'Yosemite National Park': {'location': 'Yosemite National Park', 'stopover': true},
     'Yellowstone National Park': {'location': 'Yellowstone National Park', 'stopover': true},
     'Mount Rushmore National Memorial': {'location': 'Mount Rushmore National Memorial', 'stopover': true},
-    'Falls Park, SD': {'location': 'Falls Park, SD', 'stopover': true},
   }
   const returnCities = ['Huntington Beach', ...Object.keys(returnWaypoints), 'Novi, MI'];
 
