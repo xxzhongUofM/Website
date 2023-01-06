@@ -144,13 +144,17 @@ function open_music_popup(element, imgStr) {
 }
 
 function open_map_popup(waypointTitle) {
-  // Departure
-  document.getElementById('mapPopup').style.display = 'block';
-  document.getElementById('mapPopupTitle').innerText = waypointTitle;
+  const waypointDisplay = document.getElementById(waypointTitle);
+  if (waypointDisplay !== null) {
+    waypointDisplay.style.display = 'block';
+    waypointDisplay.getElementsByTagName('input')[0].checked = true;
+  }
 }
 
 function hide_popup(element) {
-  element.style.display = 'none';
+  if (window.event.target.className.includes('container') || window.event.target.className.includes('popup')) {
+    element.style.display = 'none';
+  }
 }
 
 function initMap() {
@@ -189,8 +193,6 @@ function initMap() {
         // need to store m into currentMarker const so event listeners don't overlap 
         const currentMarker = m;
         currentMarker.addListener('click', () => {
-          // open image popup here
-          console.log('aloha', currentMarker.getTitle());
           open_map_popup(currentMarker.getTitle());
         });
       }
@@ -234,8 +236,6 @@ function initMap() {
         // need to store m into currentMarker const so event listeners don't overlap 
         const currentMarker = m;
         currentMarker.addListener('click', () => {
-          // open image popup here
-          console.log('aloha2', currentMarker.getTitle());
           open_map_popup(currentMarker.getTitle());
         });
       }
@@ -259,4 +259,3 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, start, 
   });
 }
 
-// window.initMap = initMap;

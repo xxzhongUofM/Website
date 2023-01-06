@@ -208,26 +208,280 @@
     <div id="miscellaneous">
       <br /> <br />
       <h2>MISCELLANEOUS FUN STUFF</h2>
+      <br />
       <h3>Road Trip From Novi, MI to Malibu, CA</h3>
-      <h5>(Click on the stops for pictures (work in progress))</h5>
+      <h5>(Click on the stops for pictures)</h5>
       <div id="departMap" class="map"></div>
-      <div>
-        <span class="line"></span>
-      </div>
       <br />
       <br />
-      <h3>Return Road Trip From Malibu, CA to Novi, MI</h3>
+      <h3>Return Road Trip From Los Angeles, CA to Novi, MI</h3>
       <h5>(Click on the stops for pictures)</h5>
       <div id="returnMap" class="map"></div>
       <br />
     </div>
   </div>
 
-  <!-- popup for map pictures -->
-  <div id="mapPopup" class="popup disable-select" onclick="hide_popup(this)">
+  <!-- popup for map pictures below -->
+
+  <!-- departure -->
+  <div id="Maquoketa Caves State Park" class="popup disable-select" onclick="hide_popup(this)">
     <div class="container">
-      <h2 id="mapPopupTitle">Snow Lake</h2>
-      <img id="mapImg" src="pictures/hiking.jpeg" class="popup-img">
+      <h2 id="mapPopupTitle">Maquoketa Caves State Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-underpass.png" alt=""/>
+          <label for="maquoketa-img-1" class="gallery-thumb"><img src="pictures/maquoketa-underpass.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-overlook.png" alt=""/>
+          <label for="maquoketa-img-2" class="gallery-thumb"><img src="pictures/maquoketa-overlook.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-stairs.png" alt=""/>
+          <label for="maquoketa-img-3" class="gallery-thumb"><img src="pictures/maquoketa-stairs.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-walk.png" alt=""/>
+          <label for="maquoketa-img-4" class="gallery-thumb"><img src="pictures/maquoketa-walk.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-cave.png" alt=""/>
+          <label for="maquoketa-img-5" class="gallery-thumb"><img src="pictures/maquoketa-cave.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="maquoketa-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/maquoketa-pond.png" alt=""/>
+          <label for="maquoketa-img-6" class="gallery-thumb"><img src="pictures/maquoketa-pond.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Rocky Mountains National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Rocky Mountains National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-fox.png" alt=""/>
+          <label for="rocky-img-1" class="gallery-thumb"><img src="pictures/rocky-fox.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-drive.png" alt=""/>
+          <label for="rocky-img-2" class="gallery-thumb"><img src="pictures/rocky-drive.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-stand.png" alt=""/>
+          <label for="rocky-img-3" class="gallery-thumb"><img src="pictures/rocky-stand.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-plain.png" alt=""/>
+          <label for="rocky-img-4" class="gallery-thumb"><img src="pictures/rocky-plain.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-hill.png" alt=""/>
+          <label for="rocky-img-5" class="gallery-thumb"><img src="pictures/rocky-hill.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="rocky-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/rocky-trees.png" alt=""/>
+          <label for="rocky-img-6" class="gallery-thumb"><img src="pictures/rocky-trees.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Zion National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Zion National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-riverhill.png" alt=""/>
+          <label for="zion-img-1" class="gallery-thumb"><img src="pictures/zion-riverhill.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-hill.png" alt=""/>
+          <label for="zion-img-2" class="gallery-thumb"><img src="pictures/zion-hill.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-river.png" alt=""/>
+          <label for="zion-img-3" class="gallery-thumb"><img src="pictures/zion-river.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-hang.png" alt=""/>
+          <label for="zion-img-4" class="gallery-thumb"><img src="pictures/zion-hang.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-walk.png" alt=""/>
+          <label for="zion-img-5" class="gallery-thumb"><img src="pictures/zion-walk.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="zion-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/zion-pond.png" alt=""/>
+          <label for="zion-img-6" class="gallery-thumb"><img src="pictures/zion-pond.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Grand Canyon National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Grand Canyon National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-river.png" alt=""/>
+          <label for="canyon-img-1" class="gallery-thumb"><img src="pictures/canyon-river.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-look.png" alt=""/>
+          <label for="canyon-img-2" class="gallery-thumb"><img src="pictures/canyon-look.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-side.png" alt=""/>
+          <label for="canyon-img-3" class="gallery-thumb"><img src="pictures/canyon-side.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-sit.png" alt=""/>
+          <label for="canyon-img-4" class="gallery-thumb"><img src="pictures/canyon-sit.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-whole.png" alt=""/>
+          <label for="canyon-img-5" class="gallery-thumb"><img src="pictures/canyon-whole.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="canyon-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/canyon-rock.png" alt=""/>
+          <label for="canyon-img-6" class="gallery-thumb"><img src="pictures/canyon-rock.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- return -->
+  <div id="Sequoia National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Sequoia National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-stump.png" alt=""/>
+          <label for="sequoia-img-1" class="gallery-thumb"><img src="pictures/sequoia-stump.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-look.png" alt=""/>
+          <label for="sequoia-img-2" class="gallery-thumb"><img src="pictures/sequoia-look.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-valley.png" alt=""/>
+          <label for="sequoia-img-3" class="gallery-thumb"><img src="pictures/sequoia-valley.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-group.png" alt=""/>
+          <label for="sequoia-img-4" class="gallery-thumb"><img src="pictures/sequoia-group.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-tip.png" alt=""/>
+          <label for="sequoia-img-5" class="gallery-thumb"><img src="pictures/sequoia-tip.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="sequoia-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/sequoia-sherman.png" alt=""/>
+          <label for="sequoia-img-6" class="gallery-thumb"><img src="pictures/sequoia-sherman.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Yosemite National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Yosemite National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-log.png" alt=""/>
+          <label for="yosemite-img-1" class="gallery-thumb"><img src="pictures/yosemite-log.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-pond.png" alt=""/>
+          <label for="yosemite-img-2" class="gallery-thumb"><img src="pictures/yosemite-pond.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-rock.png" alt=""/>
+          <label for="yosemite-img-3" class="gallery-thumb"><img src="pictures/yosemite-rock.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-lowerfalls.png" alt=""/>
+          <label for="yosemite-img-4" class="gallery-thumb"><img src="pictures/yosemite-lowerfalls.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-elcapitan.png" alt=""/>
+          <label for="yosemite-img-5" class="gallery-thumb"><img src="pictures/yosemite-elcapitan.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yosemite-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yosemite-tenayalake.png" alt=""/>
+          <label for="yosemite-img-6" class="gallery-thumb"><img src="pictures/yosemite-tenayalake.png" alt=""/></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Yellowstone National Park" class="popup disable-select" onclick="hide_popup(this)">
+    <div class="container">
+      <h2 id="mapPopupTitle">Yellowstone National Park</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-1" checked name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-buffalo.png" alt=""/>
+          <label for="yellowstone-img-1" class="gallery-thumb"><img src="pictures/yellowstone-buffalo.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-2" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-basin.png" alt=""/>
+          <label for="yellowstone-img-2" class="gallery-thumb"><img src="pictures/yellowstone-basin.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-3" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-spring.png" alt=""/>
+          <label for="yellowstone-img-3" class="gallery-thumb"><img src="pictures/yellowstone-spring.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-4" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-oldfaithful.png" alt=""/>
+          <label for="yellowstone-img-4" class="gallery-thumb"><img src="pictures/yellowstone-oldfaithful.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-5" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-plain.png" alt=""/>
+          <label for="yellowstone-img-5" class="gallery-thumb"><img src="pictures/yellowstone-plain.png" alt=""/></label>
+        </div>
+        <div class="gallery-item">
+          <input type="radio" id="yellowstone-img-6" name="gallery" class="gallery-selector"/>
+          <img class="gallery-img" src="pictures/yellowstone-grandprismatic.png" alt=""/>
+          <label for="yellowstone-img-6" class="gallery-thumb"><img src="pictures/yellowstone-grandprismatic.png" alt=""/></label>
+        </div>
+      </div>
     </div>
   </div>
 </body>
