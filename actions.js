@@ -1,3 +1,5 @@
+// opens the popup and populates it based on if the element is a hobby (not music), work experience, or game
+// all three types of popups use the same div in the html
 function open_popup(element, imgStr) {
   document.getElementById('popupImg').src = element.src;
   document.getElementById('popup').style.display = 'block';
@@ -132,6 +134,8 @@ function open_popup(element, imgStr) {
   }
 }
 
+// the music popup has its own div so the music can continue if the user plays it and views another popup
+// since each popup replaces the previous popup html
 function open_music_popup(element, imgStr) {
   if (imgStr === 'hobby-2') {
     document.getElementById('musicPopup').style.display = 'block';
@@ -143,6 +147,9 @@ function open_music_popup(element, imgStr) {
   }
 }
 
+// opens the map popup when users click on the waypoints
+// each waypoints has its own html popup, so the only parameter is to see which popup to display
+// this was done this way versus replacing because loading images take a long time
 function open_map_popup(waypointTitle) {
   const waypointDisplay = document.getElementById(waypointTitle);
   if (waypointDisplay !== null) {
@@ -151,12 +158,14 @@ function open_map_popup(waypointTitle) {
   }
 }
 
+// when the user clicks any non-image and non-link area, the popup will disappear
 function hide_popup(element) {
   if (window.event.target.className.includes('container') || window.event.target.className.includes('popup')) {
     element.style.display = 'none';
   }
 }
 
+// initializes the google maps api to show the map and the direction of travel for the road trips
 function initMap() {
   // Novi to Malibu
   const departDirectionsService = new google.maps.DirectionsService;
@@ -186,7 +195,6 @@ function initMap() {
   departDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       const departMarkers = departDirectionsRenderer.h.markers;
-      console.log('markers', departMarkers);
       for (const[index, m] of departMarkers.entries()) {
         m.setTitle(departCities[index]);
         // m.setLabel(departCities[index]);
@@ -199,9 +207,7 @@ function initMap() {
     }, 100);
   });
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // --------------------------------------------------------------------------------------------------------
 
   // Malibu to Novi
   const returnDirectionsService = new google.maps.DirectionsService;
@@ -229,7 +235,6 @@ function initMap() {
   returnDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       const returnMarkers = returnDirectionsRenderer.h.markers;
-      console.log('markers', returnMarkers);
       for (const [index, m] of returnMarkers.entries()) {
         m.setTitle(returnCities[index]);
         // need to store m into currentMarker const so event listeners don't overlap 
@@ -243,6 +248,8 @@ function initMap() {
   
 }
 
+// uses the google directions api to calculate the best driving route
+// this is not a 100% accurate route we took because the api only allows future dates
 function calculateAndDisplayRoute(directionsService, directionsRenderer, start, end, waypts) {
   directionsService.route({
     origin: start,
