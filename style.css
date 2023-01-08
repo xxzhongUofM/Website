@@ -39,17 +39,17 @@ a {
 }
 
 .welcome-img {
-  background-image: url('pictures/cover.jpeg');
+  background-image: url('pictures/cover.jpg');
   min-height: 100%;
 }
 
 .portfolio-img {
-  background-image: url('pictures/portfolio.png');
+  background-image: url('pictures/portfolio.jpg');
   padding-top: 300px;
 }
 
 .miscellaneous-img {
-  background-image: url('pictures/grandprismatic.png');
+  background-image: url('pictures/grandprismatic.jpg');
   padding-top: 300px;
 }
 
