@@ -154,7 +154,10 @@ function open_map_popup(waypointTitle) {
   const waypointDisplay = document.getElementById(waypointTitle);
   if (waypointDisplay !== null) {
     waypointDisplay.style.display = 'block';
-    waypointDisplay.getElementsByTagName('input')[0].checked = true;
+    waypointFirstPicture = waypointDisplay.getElementsByTagName('input')[0];
+    if (waypointFirstPicture) {
+      waypointFirstPicture.checked = true;
+    }
   }
 }
 
