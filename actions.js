@@ -1,5 +1,6 @@
 // opens the popup and populates it based on if the element is a hobby (not music), work experience, or game
 // all three types of popups use the same div in the html
+let currentActive = null;
 function open_popup(element, imgStr) {
   document.getElementById('popupImg').src = element.src;
   document.getElementById('popup').style.display = 'block';
@@ -18,6 +19,10 @@ function open_popup(element, imgStr) {
     document.getElementById('popupImg').className = 'work-img';
   } else {
     document.getElementById('popupImg').className = 'popup-img';
+  }
+
+  if (currentActive === imgStr) {
+    return;
   }
 
   // add text for each different popup
@@ -42,10 +47,11 @@ function open_popup(element, imgStr) {
     I like the scenery and it gives me an excuse to not look at my phone. \
     The photo above was actually taken by me on top of Mt. Baker-Snoqualmie, in front of Snow Lake.';
   } else if (imgStr === 'hobby-4') {
-    document.getElementById('popupTxt').innerText = 
+    document.getElementById('popupTxt').innerHTML = 
     'There are always good shows on Netflix, and my all time favorite is Alchemy of Souls. \
     I really liked the quirky and sassy way the actors and actresses talked. \
-    The story line was also very intriguing and suspenseful. Definitely an 11/10.';
+    The story line was also very intriguing and suspenseful. Definitely an 11/10. \
+    <br /> <video onloadstart="this.volume=0.2" controls alt=""><source src="media/alchemytrailer.mp4" type="video/mp4"></video>';
   } 
   
   else if (imgStr == 'work-1') {
@@ -132,6 +138,8 @@ function open_popup(element, imgStr) {
     '<br />' + '<br />' + '<a href=\'https://xxzhonguofm.github.io/GrapeKun-s-Quest/index.html\' target=\'_blank\'>Play Now!</a>' + 
     '<br />' + 'WASD or arrow keys to move, and left click to shoot.';
   }
+
+  currentActive = imgStr;
 }
 
 // the music popup has its own div so the music can continue if the user plays it and views another popup
