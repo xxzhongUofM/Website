@@ -10,6 +10,7 @@ function open_popup(element, imgStr) {
     document.getElementById('slideshow').style.display = 'none';
     document.getElementById('popupTxt').className = 'popup-txt';
   } else {
+    document.getElementById('popupImg').src = '';
     document.getElementById('slideshow').style.display = 'block';
     document.getElementById('popupTxt').className = 'popup-txt slideshow-txt';
   }
@@ -35,7 +36,6 @@ function open_popup(element, imgStr) {
     const approxMonths = age.getUTCMonth() - epoch.getUTCMonth();
     const approxDays = age.getUTCDate() - epoch.getUTCDate();
     const ageString = '' + approxYears + ' years, ' + approxMonths + ' months, and ' + approxDays + ' days old.';
-    document.getElementById('popupImg').src = '';
     document.getElementById('popupTxt').innerText = 
     'Meet Snowball! He is a really friendly yet naughty kitten. \
     He\'s always hungry and chases everything. His birthday is August 11th, 2022, so he is approximately ' + ageString + 
