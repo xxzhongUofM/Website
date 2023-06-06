@@ -206,7 +206,7 @@ function initMap() {
   departDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       console.log(departDirectionsRenderer);
-      const departMarkers = departDirectionsRenderer.h.markers;
+      const departMarkers = departDirectionsRenderer.g.markers;
       for (const[index, m] of departMarkers.entries()) {
         m.setTitle(departCities[index]);
         // m.setLabel(departCities[index]);
@@ -247,7 +247,7 @@ function initMap() {
   returnDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
       console.log(returnDirectionsRenderer);
-      const returnMarkers = returnDirectionsRenderer.h.markers;
+      const returnMarkers = returnDirectionsRenderer.g.markers;
       for (const [index, m] of returnMarkers.entries()) {
         m.setTitle(returnCities[index]);
         // need to store m into currentMarker const so event listeners don't overlap 
