@@ -215,7 +215,7 @@ function initMap() {
           open_map_popup(currentMarker.getTitle());
         });
       }
-    }, 100);
+    }, 500);
   });
 
   // --------------------------------------------------------------------------------------------------------
@@ -254,7 +254,7 @@ function initMap() {
           open_map_popup(currentMarker.getTitle());
         });
       }
-    }, 100);
+    }, 500);
   });
   
 }
