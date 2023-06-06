@@ -205,6 +205,7 @@ function initMap() {
   // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
   departDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
+      console.log(departDirectionsRenderer);
       const departMarkers = departDirectionsRenderer.h.markers;
       for (const[index, m] of departMarkers.entries()) {
         m.setTitle(departCities[index]);
@@ -215,7 +216,7 @@ function initMap() {
           open_map_popup(currentMarker.getTitle());
         });
       }
-    }, 500);
+    }, 100);
   });
 
   // --------------------------------------------------------------------------------------------------------
@@ -245,6 +246,7 @@ function initMap() {
   // gets the waypoints list to put an event listener on, b/c api doesn't have waypoint onclicks
   returnDirectionsRenderer.addListener('directions_changed', () => {
     setTimeout(() => {
+      console.log(returnDirectionsRenderer);
       const returnMarkers = returnDirectionsRenderer.h.markers;
       for (const [index, m] of returnMarkers.entries()) {
         m.setTitle(returnCities[index]);
@@ -254,7 +256,7 @@ function initMap() {
           open_map_popup(currentMarker.getTitle());
         });
       }
-    }, 500);
+    }, 100);
   });
   
 }
