@@ -53,11 +53,26 @@ function open_popup(element, imgStr) {
     The story line was also very intriguing and suspenseful. Definitely an 11/10. \
     <br /> <video onloadstart="this.volume=0.2" controls alt=""><source src="media/alchemytrailer.mp4" type="video/mp4"></video>';
   } 
-  
-  else if (imgStr == 'work-1') {
+
+  else if (imgStr == 'work-0') {
+    document.getElementById('popupTxt').innerHTML = 
+    'My most recent internship was at Google from May 2023 to September 2023 in Mountain View, California. I worked under the YouTube product area, \
+    specifically with YouTube Shopping, focusing on merchants. <br /><br /> YouTube Shopping partners up with  \
+    third parties, such as Rakuten, to advertise products to sell. These third parties provide YouTube with commission for sales, as well as relevant \
+    information. The problem is that YouTube receives the sales data by third party uploading the data through SFTP every day. \
+    However, this made us depend on an outdated way to receive data, and we would only receive data once every day. \
+    I was tasked to improve the data retrieval by switching from a push to a pull system. I created a fetch pipeline \
+    and used different internal libraries to call third party affiliate APIs to retrieve the data. \
+    I then created another pipeline to convert different third party data into one standardized format. \
+    Finally, I created an internal dashbaord to compare pushed and fetched data to make sure they\'re the same and also \
+    to show some preliminary analytics. I productionized the code through Google Borg to allocate resources and schedule them to run \
+    every morning so the team would have updated data every day even if they did not run the code on-demand. \
+    <br /><br /> Due to NDAs, I can\'t share a lot of specifics or images, but just know that if you \
+    every come across a shopping UI in YouTube, I worked on part of it.'
+  } else if (imgStr == 'work-1') {
     document.getElementById('popupImg').src = 'pictures/metalogowhite.png';
     document.getElementById('popupTxt').innerHTML = 
-    'My most recent internship was at Meta from May 2022 to August 2022 in Seattle, Washington. I worked under the Reality Labs Pillar, specifically with AR glasses. \
+    'I interned at Meta from May 2022 to August 2022 in Seattle, Washington. I worked under the Reality Labs Pillar, specifically with AR glasses. \
     <br /><br /> Facebook\'s AR environment didn\'t have a way to measure the glasses\' software and hardware performance, so I was tasked with creating a \
     performance tracking overlay. First, I created a settings app in Android Java to let users choose which metrics they want to see. \
     Then, I calculated metric performances, such as FPS, in C++. Finally, I used a little bit of OpenGL in C++ to draw a layer on top of \
